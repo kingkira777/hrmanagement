@@ -13,12 +13,12 @@ var app = express();
 
 
 //Session
-app.use(session({
-  secret : 'king',
-  resave : true,
+var sess = {
+  secret : 'king_kira',
+  resave: true,
   saveUninitialized: true,
-  cookie : {}
-}))
+  cookie :{}
+};
 
 
 // view engine setup
@@ -30,6 +30,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sess));
+
 
 app.use('/', indexRouter);
 app.use('/applicants', applicantRouter);
