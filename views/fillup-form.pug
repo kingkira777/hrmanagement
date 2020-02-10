@@ -14,7 +14,7 @@ html
                     .card-header
                         h4 Fillup Form 
                     .card-body 
-                        form#fillupform(action="/applicants/save-fillupform", method="post")
+                        form#fillupform(action="/applicants/save-fillupform?formid="+formid, method="post")
                             .row  
                                 .col-md-4.col-sm-4 
                                     label(for="name") Name
@@ -36,5 +36,13 @@ html
                             
 
             .col-md-2
+        .row 
+            .col-md-2
+            .col-md-8
+                form(action="#" method="post")
+                    input(type="file" name="file" id="file" required)
+                    button(type="submit") Upload
+            .col-md-2
+
 
     include Partials/footer.ext.pug 

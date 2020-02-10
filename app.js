@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+var fileupload = require('express-fileupload');
 
 var indexRouter = require('./routes/index');
 var applicantRouter = require('./routes/applicant');
@@ -31,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
-
+app.use(fileupload());
 
 app.use('/', indexRouter);
 app.use('/applicants', applicantRouter);

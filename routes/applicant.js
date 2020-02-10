@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const con = require('./connection');
+const main = require('./main');
 
 //Get the List of Applicant form Database
 router.get('/',(req,res,next)=>{
@@ -49,9 +50,13 @@ router.get('/viewform?',(req,res,next)=>{
 });
 
 //Fill Out Form
-router.get('/fillup-form',(req,res,next)=>{
-    res.render('fillup-form', { title : 'Fillup Form'});
-    res.end();
+router.get('/fillup-form?',(req,res,next)=>{
+    if(!req.query.formid){
+        res.redirect('/applicants/fillup-form?formid='+ main.random_id());
+    }else{
+        res.render('fillup-form', { title : 'Fillup Form', formid : req.query.formid});
+        res.end();
+    }
 });
 
 
@@ -60,8 +65,9 @@ router.get('/fillup-form',(req,res,next)=>{
 //===================POST REQUEST===========================//
 
 
-router.post('/save-fillupform',(req,res,next)=>{
+router.post('/save-fillupform?',(req,res,next)=>{
 
+    var formid = req.query.formid;
     var name = req.body.name;
     var email = req.body.email;
     var telephone = req.body.telephone;
@@ -72,10 +78,10 @@ router.post('/save-fillupform',(req,res,next)=>{
     var chkVal = [email];
 
 
-    var q = `INSERT INTO applicants(app_name, app_email, app_telephone, app_form)
+    var q = `INSERT INTO applicants(app_no, app_name, app_email, app_telephone, app_form)
     VALUES ?`;
     var qval = [
-        [name, email, telephone, form]
+        [formid, name, email, telephone, form]
     ];
 
     con.query(chk,chkVal,(err,chkres)=>{
