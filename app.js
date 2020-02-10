@@ -13,7 +13,6 @@ var app = express();
 
 
 //Session
-app.set('trust proxy', 1);
 app.use(session({
   secret : 'king',
   resave : true,
