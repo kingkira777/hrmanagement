@@ -1,6 +1,39 @@
-extends layout
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+        title Veltrix - Admin Dashboard Template | Themesbrand
+        meta(content='Responsive admin theme build on top of Bootstrap 4', name='description')
+        meta(content='Themesbrand', name='author')
+        link(rel='shortcut icon', href='/assets/images/favicon.ico')
+        link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/metismenu.min.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/icons.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/style.css', rel='stylesheet', type='text/css')
+    body.bg-primary
+        .home-btn.d-none.d-sm-block
+            a.text-white(href='/')
+                i.fas.fa-home.h2
+        .account-pages.my-5.pt-5
+            .container
+                .row.justify-content-center
+                    .col-md-8.col-lg-6.col-xl-5
+                        .card.shadow-none.overflow-hidden
+                            .card-body
+                                .text-center
+                                    h1.display-2.font-weight-normal.mt-0=error.status
+                                    p.text-muted.mb-5=message
+                            div
+                                img.img-fluid.mx-auto.d-block(src='/assets/images/error.png', alt='')
+        // jQuery
+        script(src='/assets/js/jquery.min.js')
+        script(src='/assets/js/bootstrap.bundle.min.js')
+        script(src='/assets/js/metismenu.min.js')
+        script(src='/assets/js/jquery.slimscroll.js')
+        script(src='/assets/js/waves.min.js')
+        // App js
+        script(src='/assets/js/app.js')
 
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+

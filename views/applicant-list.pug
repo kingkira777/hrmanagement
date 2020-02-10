@@ -18,7 +18,7 @@ block content
                     
                     tbody
                         each app in applicants
-                            tr 
+                            tr(class= (app.app_isview != 'true')? 'table-success' : '') 
                                 td 
                                     a(href="/applicants/viewform?id="+ app.app_id)
                                         i.fa.fa-edit 

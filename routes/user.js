@@ -32,8 +32,6 @@ router.post('/login-user',(req,res,next)=>{
     var username = req.body.username;
     var password = req.body.password;
     
-
-
     var q = `SELECT * FROM users WHERE user_name = ? AND user_password = ?`;
     var qval = [username,password];
 
