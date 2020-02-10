@@ -65,6 +65,44 @@ router.get('/fillup-form?',(req,res,next)=>{
 //===================POST REQUEST===========================//
 
 
+
+//Upload File
+router.post('/upload-file?',(req,res,next)=>{
+    var no = req.query.formid;
+    if(!req.files || Object.keys(req.files).length === 0){
+        return res.status(400).send("No files were uploaded");
+    }
+
+    let file = req.files.resume;
+    var path = 'public/files/' + file.name;
+
+    
+
+
+    file.mv(path, (err)=>{
+        if(err){
+            console.log("error: "+ err);
+        }
+
+        //Save data to Database
+        var q = `INSERT INTO files(file_no, file_name,file_path) VALUES ?`;
+        var qVal = [
+            [no, file.name, path]
+        ];
+        con.query(q,[qVal], (err,rs)=>{
+            if(err){
+                console.log("error: "+ err);
+            }
+            res.send("File Uploaded");
+            res.end();
+        });
+    });
+
+});
+
+
+
+//Save Applicant Form Data
 router.post('/save-fillupform?',(req,res,next)=>{
 
     var formid = req.query.formid;

@@ -39,8 +39,8 @@ html
         .row 
             .col-md-2
             .col-md-8
-                form(action="#" method="post")
-                    input(type="file" name="file" id="file" required)
+                form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
+                    input(type="file" name="resume" id="resume" required)
                     button(type="submit") Upload
             .col-md-2
 
