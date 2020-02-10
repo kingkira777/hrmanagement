@@ -11,15 +11,11 @@ router.get('/login',(req,res,next)=>{
 
 
 router.get('/logout',(req,res,next)=>{
-   
-    req.session.destroy((err)=>{
-        if(err){
-            console.log("Err to Destroy Session: "+ err);
-        }
+    if(req.session.id){
+        req.session.destroy();
         res.redirect('/user/login');
         res.end();
-    });
-
+    }
 });
 
 
