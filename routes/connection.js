@@ -18,7 +18,7 @@ function connection(){
     // con = mysql.createPool({
     //     host : 'localhost',
     //     user : 'root',
-    //     password : '',
+    //     password : 'admin',
     //     database : 'hmanager',
     // });
     return con;

@@ -1,48 +1,66 @@
 doctype html
 html
-  head
-    include Partials/header.ext.pug
+    head
+        include Partials/header.ext.pug
 
-  body
-
-    
-    .content 
-        .row 
-            .col-md-2 
-            .col-md-8 
-                .card
-                    .card-header
-                        h4 Fillup Form 
-                    .card-body 
-                        form#fillupform(action="/applicants/save-fillupform?formid="+formid, method="post")
-                            .row  
-                                .col-md-4.col-sm-4 
-                                    label(for="name") Name
-                                    input(type="text" name="name" required).form-control 
-                                .col-md-4.col-sm-4 
-                                    label(for="email") Email
-                                    input(type="email" name="email" required).form-control 
-                                .col-md-4.col-sm-4 
-                                    label(for="telephone") Telephone
-                                    input(type="text" name="telephone").form-control 
+    body
 
 
-                            br
+        .content 
+            .row 
+                .col-md-2 
+                .col-md-8 
+                    .card
+                        .card-header
+                            h4 Fillup Form 
+                        .card-body 
+                            form#form-horizontal(action="/applicants/save-fillupform?formid="+formid, method="post").form-horizontal.form-wizard-wrapper
+                                h3
+                                    |Seller Details
+                                fieldset
+                                    include forms/form_01.pug
+                                h3
+                                    |Seller Details
+                                fieldset
+                                    include forms/form_02.pug
+                                h3
+                                    |Seller Details
+                                fieldset
+                                    include forms/form_03.pug
+                                h3 
+                                    |Details
+                                fieldset
+                                    include forms/form_04.pug
 
-                            button.btn.btn-primary.pull-right(type="submit")
-                                i.fa.fa-sign-in-alt  
-                                |   Submit
-                            .clearfix 
-                            
-
-            .col-md-2
-        .row 
-            .col-md-2
-            .col-md-8
-                form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
-                    input(type="file" name="resume" id="resume" required)
-                    button(type="submit") Upload
-            .col-md-2
+                //- .row  
+                //-     .col-md-4.col-sm-4 
+                //-         label(for="name") Name
+                //-         input(type="text" name="name" required).form-control 
+                //-     .col-md-4.col-sm-4 
+                //-         label(for="email") Email
+                //-         input(type="email" name="email" required).form-control 
+                //-     .col-md-4.col-sm-4 
+                //-         label(for="telephone") Telephone
+                //-         input(type="text" name="telephone").form-control 
 
 
-    include Partials/footer.ext.pug 
+                br
+
+                //- button.btn.btn-primary.pull-right(type="submit")
+                //-     i.fa.fa-sign-in-alt  
+                //-     |   Submit
+                //- .clearfix 
+
+
+                .col-md-2
+                .row 
+                    .col-md-2
+                    .col-md-8
+                        form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
+                            input(type="file" name="resume" id="resume" required)
+                            button(type="submit") Upload
+                    .col-md-2
+
+
+        include Partials/footer.ext.pug 
+
