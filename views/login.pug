@@ -1,0 +1,53 @@
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+        title Veltrix - Admin Dashboard Template | Themesbrand
+        meta(content='Responsive admin theme build on top of Bootstrap 4', name='description')
+        meta(content='Themesbrand', name='author')
+        link(rel='shortcut icon', href='/assets/images/favicon.ico')
+        link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/metismenu.min.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/icons.css', rel='stylesheet', type='text/css')
+        link(href='/assets/css/style.css', rel='stylesheet', type='text/css')
+    body.bg-primary
+        .home-btn.d-none.d-sm-block
+            a.text-white(href='/')
+                i.fas.fa-home.h2
+        .account-pages.my-5.pt-5
+            .container
+                .row.justify-content-center
+                    .col-md-8.col-lg-6.col-xl-5
+                        .card.bg-pattern.shadow-none
+                            .card-body
+                                .text-center.mt-4
+                                    .mb-3
+                                        a.logo(href='index.html')
+                                            img(src='/assets/images/logo-dark.png', height='20', alt='logo')
+                                .p-3
+                                    h4.font-18.text-center HR MANAGEMENT
+                                    if(err)
+                                        p.text-danger.text-center.mb-4 Invalid Credentials! Please Try Again.
+                                    form.form-horizontal(action='/user/login-user' method="post")
+                                        .form-group
+                                            label(for='username') Username
+                                            input#username.form-control(type='text', placeholder='Enter username', name="username" required)
+                                        .form-group
+                                            label(for='userpassword') Password
+                                            input#userpassword.form-control(type='password', placeholder='Enter password' name="password" required)
+                                        .mt-3
+                                            button.btn.btn-primary.btn-block.waves-effect.waves-light(type='submit') Log In
+                        .mt-5.text-center.text-white-50
+                            p
+                                | © 2019 Veltrix. Crafted with 
+                                i.mdi.mdi-heart.text-danger
+                                |  by Themesbrand
+        // jQuery
+        script(src='/assets/js/jquery.min.js')
+        script(src='/assets/js/bootstrap.bundle.min.js')
+        script(src='/assets/js/metismenu.min.js')
+        script(src='/assets/js/jquery.slimscroll.js')
+        script(src='/assets/js/waves.min.js')
+        // App js
+        script(src='/assets/js/app.js')

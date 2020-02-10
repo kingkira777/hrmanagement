@@ -4,40 +4,42 @@ const con = require('./connection');
 
 //Get the List of Applicant form Database
 router.get('/',(req,res,next)=>{
-    var g = `SELECT * FROM applicants`;
-    con.query(g,(err,rs)=>{
-        if(err){
-            console.log(err);
-        }
-        
-        res.render('applicant-list',{ title : 'Applicant List', applicants : rs});
-        res.end();
-    });
-    
+    if(req.session.id){
+        var g = `SELECT * FROM applicants`;
+        con.query(g,(err,rs)=>{
+            if(err){
+                console.log(err);
+            }
+            
+            res.render('applicant-list',{ title : 'Applicant List', applicants : rs});
+            res.end();
+        });
+    }
 });
 
 
 //View applicant Form from HR Manager
 router.get('/viewform?',(req,res,next)=>{
-    var id = req.query.id
-
-    var q = `SELECT * FROM applicants WHERE app_id = ?`;
-    var qval = [id];
-    con.query(q,qval,(err,rs)=>{
-        if(err){
-            console.log("Err: "+ err);
-        }
-
-        var v = `UPDATE applicants SET app_isview = ? WHERE app_id = ?`;
-        var vVal = ['true', id];
-        con.query(v,vVal,(err1,rs1)=>{
-            if(err1){
-                console.log("Err: "+ err1);
+    if(req.session.id){
+        var id = req.query.id
+        var q = `SELECT * FROM applicants WHERE app_id = ?`;
+        var qval = [id];
+        con.query(q,qval,(err,rs)=>{
+            if(err){
+                console.log("Err: "+ err);
             }
-            res.render('view-form',{ title : 'View Applicant Form', app : rs});
-            res.end();
+
+            var v = `UPDATE applicants SET app_isview = ? WHERE app_id = ?`;
+            var vVal = ['true', id];
+            con.query(v,vVal,(err1,rs1)=>{
+                if(err1){
+                    console.log("Err: "+ err1);
+                }
+                res.render('view-form',{ title : 'View Applicant Form', app : rs});
+                res.end();
+            });
         });
-    });
+    }
 });
 
 //Fill Out Form
