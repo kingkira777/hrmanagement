@@ -4,7 +4,7 @@ const con = require('./connection');
 
 //Get the List of Applicant form Database
 router.get('/',(req,res,next)=>{
-    if(req.session.id){
+    if(req.session.user){
         var g = `SELECT * FROM applicants`;
         con.query(g,(err,rs)=>{
             if(err){
@@ -14,13 +14,16 @@ router.get('/',(req,res,next)=>{
             res.render('applicant-list',{ title : 'Applicant List', applicants : rs});
             res.end();
         });
+    }else{
+        res.redirect('/user/login');
+        res.end();
     }
 });
 
 
 //View applicant Form from HR Manager
 router.get('/viewform?',(req,res,next)=>{
-    if(req.session.id){
+    if(req.session.user){
         var id = req.query.id
         var q = `SELECT * FROM applicants WHERE app_id = ?`;
         var qval = [id];
@@ -39,6 +42,9 @@ router.get('/viewform?',(req,res,next)=>{
                 res.end();
             });
         });
+    }else{    
+        res.redirect('/user/login');
+        res.end();
     }
 });
 

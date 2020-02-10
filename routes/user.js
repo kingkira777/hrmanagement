@@ -15,6 +15,9 @@ router.get('/logout',(req,res,next)=>{
         req.session.destroy();
         res.redirect('/user/login');
         res.end();
+    }else{    
+        res.redirect('/user/login');
+        res.end();
     }
 });
 
