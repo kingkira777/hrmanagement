@@ -1,0 +1,17 @@
+const mysql = require('mysql');
+
+
+var con; 
+
+
+function connection(){
+    con = mysql.createPool({
+        host : 'localhost',
+        user : 'root',
+        password : 'admin',
+        database : 'hmanager',
+    });
+    return con;
+}
+
+module.exports = connection();

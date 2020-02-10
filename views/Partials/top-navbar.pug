@@ -1,0 +1,23 @@
+// Top Bar Start
+.topbar
+    // LOGO
+    .topbar-left
+        a.logo(href='index.html')
+            span.logo-light
+                img(src='/assets/images/logo-light.png', alt='', height='16')
+            span.logo-sm
+                img(src='/assets/images/logo-sm.png', alt='', height='22')
+    nav.navbar-custom
+        ul.navbar-right.list-inline.float-right.mb-0
+           
+            li.dropdown.notification-list.list-inline-item
+                .dropdown.notification-list.nav-pro-img
+                    a.dropdown-toggle.nav-link.arrow-none.nav-user(data-toggle='dropdown', href='#', role='button', aria-haspopup='false', aria-expanded='false')
+                        img.rounded-circle(src='/assets/images/users/user-4.jpg', alt='user')
+                    .dropdown-menu.dropdown-menu-right.profile-dropdown
+                        // item
+                        a.dropdown-item.text-danger(href='#')
+                            i.mdi.mdi-power.text-danger
+                            |  Logout
+       
+// Top Bar End

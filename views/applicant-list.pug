@@ -1,0 +1,31 @@
+extends layout
+
+block content 
+    .card  
+        .card-header 
+            | Applicant List
+        .card-body    
+            .table-responsive
+                table.table.mb-0
+                    thead   
+                        tr  
+                            th Option(s)
+                            th Name 
+                            th Email 
+                            th Telephone 
+                            th Cell#
+                            th Address 
+                    
+                    tbody
+                        each app in applicants
+                            tr 
+                                td 
+                                    a(href="/applicants/viewform?id="+ app.app_id)
+                                        i.fa.fa-edit 
+                                        | Open
+                                td= app.app_name
+                                td= app.app_email
+                                td= app.app_telephone
+                                td= app.app_cellno
+                                td= app.app_address
+

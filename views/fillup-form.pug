@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    include Partials/header.ext.pug
+
+  body
+
+    
+    .content 
+        .row 
+            .col-md-2 
+            .col-md-8 
+                .card
+                    .card-header
+                        h4 Fillup Form 
+                    .card-body 
+                        form#fillupform(action="/applicants/save-fillupform", method="post")
+                            .row  
+                                .col-md-4.col-sm-4 
+                                    label(for="name") Name
+                                    input(type="text" name="name" required).form-control 
+                                .col-md-4.col-sm-4 
+                                    label(for="email") Email
+                                    input(type="email" name="email" required).form-control 
+                                .col-md-4.col-sm-4 
+                                    label(for="telephone") Telephone
+                                    input(type="text" name="telephone").form-control 
+
+
+                            br
+
+                            button.btn.btn-primary.pull-right(type="submit")
+                                i.fa.fa-sign-in-alt  
+                                |   Submit
+                            .clearfix 
+                            
+
+            .col-md-2
+
+    include Partials/footer.ext.pug 

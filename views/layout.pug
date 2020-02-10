@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    include Partials/header.ext.pug
+
+  body
+    #wrapper 
+
+      -//Top Navbar 
+      include Partials/top-navbar.pug 
+
+      -//Left Sidebar
+      include Partials/left-sidebar.pug 
+
+      .content-page 
+          .content 
+            .container-fluid
+            
+              block content
+
+      
+    include Partials/footer.ext.pug
+
+      
+
+
