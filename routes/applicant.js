@@ -22,6 +22,12 @@ router.get('/',(req,res,next)=>{
 });
 
 
+
+router.get('/thankyou',(req,res,next)=>{
+    res.send('sample');
+});
+
+
 //View applicant Form from HR Manager
 router.get('/viewform?',(req,res,next)=>{
     if(req.session.user){
@@ -39,7 +45,8 @@ router.get('/viewform?',(req,res,next)=>{
                 if(err1){
                     console.log("Err: "+ err1);
                 }
-                res.render('view-form',{ title : 'View Applicant Form', app : rs});
+                var form_data=JSON.parse(rs[0].app_form);
+                res.render('view-form',{ title : 'View Applicant Form', app : form_data});
                 res.end();
             });
         });
@@ -106,20 +113,24 @@ router.post('/upload-file?',(req,res,next)=>{
 router.post('/save-fillupform?',(req,res,next)=>{
 
     var formid = req.query.formid;
-    var name = req.body.name;
-    var email = req.body.email;
-    var telephone = req.body.telephone;
+    var name = req.body.appname+' '+req.body.appmname+''+req.body.applname;
+    var email = req.body.appemail1;
+    var telephone = req.body.apptell;
+    var address = req.body.appaddress1;
+    var cellphone = req.body.appphonenumber;
     var form = JSON.stringify(req.body);
+
 
 
     var chk = `SELECT * FROM applicants WHERE app_email = ?`;
     var chkVal = [email];
 
 
-    var q = `INSERT INTO applicants(app_no, app_name, app_email, app_telephone, app_form)
+
+    var q = `INSERT INTO applicants(app_no, app_name, app_email, app_telephone,app_cellno,app_address,app_form)
     VALUES ?`;
     var qval = [
-        [formid, name, email, telephone, form]
+        [formid, name, email, telephone,cellphone,address,form]
     ];
 
     con.query(chk,chkVal,(err,chkres)=>{

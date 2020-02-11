@@ -7,13 +7,19 @@ block content
             h4 Fillup Form 
         .card-body 
             form#fillupform(action="/applicants/save-fillupform", method="post")
-                .row  
-                    .col-md-4.col-sm-4 
-                        label(for="name") Name
-                        input(type="text" name="name" required value= (app)? app[0].app_name : '' ).form-control 
-                    .col-md-4.col-sm-4 
-                        label(for="email") Email
-                        input(type="email" name="email" required value= (app)? app[0].app_email : '' ).form-control 
-                    .col-md-4.col-sm-4 
-                        label(for="telephone") Telephone
-                        input(type="text" name="telephone" value= (app)? app[0].app_telephone : '' ).form-control 
+                h3
+                    |Seller Details
+                fieldset
+                    include forms/form_01.pug
+                h3
+                    |Seller Details
+                fieldset
+                    include forms/form_02.pug
+                h3
+                    |Seller Details
+                fieldset
+                    include forms/form_03.pug
+                h3 
+                    |Details
+                fieldset
+                    include forms/form_04.pug

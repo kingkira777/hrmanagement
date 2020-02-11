@@ -1,37 +1,50 @@
+- var chk1 = (app && app.referoption1 === "yes")? true : false
+- var chk2 = (app && app.referoption1 === "no")? true : false
+- var chk3 = (app && app.referoption3 === "yes")? true : false
+- var chk4 = (app && app.referoption3 === "no")? true : false
+- var chk5 = (app && app.referoption5 === "yes")? true : false
+- var chk6 = (app && app.referoption5 === "no")? true : false
+
+
+
+
+
+
+
 .text-muted
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Company
-            input#appcompany1.form-control.waves-float(type='text' required='' placeholder='eg.Actmedicalgroup' name='appcompany1')
+            input#appcompany1.form-control.waves-float(type='text' value= (app)? app.appcompany1 : '' placeholder='eg.Actmedicalgroup' name='appcompany1')
         .form-group.col-md-6
             label.text-dark Jobtitle
-            input#appjobtitle1.form-control.waves-float(type='text' required='' placeholder='eg.Doctorate Degree Holder' name='appjobtitle1')
+            input#appjobtitle1.form-control.waves-float(type='text' value= (app)? app.appjobtitle1 : '' placeholder='eg.Doctorate Degree Holder' name='appjobtitle1')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Address
-            input#appaddress6.form-control.waves-float(type='text' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress6')
+            input#appaddress6.form-control.waves-float(type='text' value= (app)? app.appaddress6 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress6')
         .form-group.col-md-3
             label.text-dark From
-            input#appfrom4.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom4')
+            input#appfrom4.form-control.waves-float(type='date' value= (app)? app.appfrom4 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom4')
         .form-group.col-md-3
             label.text-dark To
-            input#appto4.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto4')
+            input#appto4.form-control.waves-float(type='date' value= (app)? app.appto4 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto4')
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompanyphone1.form-control.waves-float(type='text' required='' name='appcompanyphone1')
+            input#appcompanyphone1.form-control.waves-float(type='text' value= (app)? app.appcompanyphone1 : '' name='appcompanyphone1')
         .form-group.col-sm-4
             label.text-dark Supervisor Name
-            input#appcompanysupervisor1.form-control.waves-float(type='text' required='' name='appcompanysupervisor1')
+            input#appcompanysupervisor1.form-control.waves-float(type='text' value= (app)? app.appcompanysupervisor1 : '' name='appcompanysupervisor1')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#referoption1.custom-control-input(type='radio' name='referoption1')
+                input#referoption1.custom-control-input(type='radio' value="yes" checked=chk1 name='referoption1')
                 label.custom-control-label(for='referoption1') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#referoption2.custom-control-input(type='radio' name='referoption2')
+                input#referoption2.custom-control-input(type='radio' value="no" checked=chk2 name='referoption1')
                 label.custom-control-label(for='referoption2') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -41,78 +54,78 @@
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Company
-            input#appcompany2.form-control.waves-float(type='text' required='' placeholder='eg.Actmedicalgroup' name='appcompany2')
+            input#appcompany2.form-control.waves-float(type='text' value= (app)? app.appcompany2 : '' placeholder='eg.Actmedicalgroup' name='appcompany2')
         .form-group.col-md-6
             label.text-dark Jobtitle
-            input#appjobtitle2.form-control.waves-float(type='text' required='' placeholder='eg.Doctorate Degree Holder' name='appjobtitle2')
+            input#appjobtitle2.form-control.waves-float(type='text' value= (app)? app.appjobtitle2 : '' placeholder='eg.Doctorate Degree Holder' name='appjobtitle2')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Address
-            input#appaddress7.form-control.waves-float(type='text' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress7')
+            input#appaddress7.form-control.waves-float(type='text' value= (app)? app.appaddress7 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress7')
         .form-group.col-md-3
             label.text-dark From
-            input#appfrom5.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom5')
+            input#appfrom5.form-control.waves-float(type='date' value= (app)? app.appfrom5 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom5')
         .form-group.col-md-3
             label.text-dark To
-            input#appto5.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto5')
+            input#appto5.form-control.waves-float(type='date' value= (app)? app.appto5 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto5')
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompanyphone2.form-control.waves-float(type='text' required='' name='appcompanyphone2')
+            input#appcompanyphone2.form-control.waves-float(type='text' value= (app)? app.appcompanyphone2 : '' name='appcompanyphone2')
         .form-group.col-sm-4
             label.text-dark Supervisor
-            input#appsupervisor2.form-control.waves-float(type='date' required='' name='appsupervisor2')
+            input#appsupervisor2.form-control.waves-float(type='text' value= (app)? app.appsupervisor2 : '' name='appsupervisor2')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#referoption3.custom-control-input(type='radio' name='referoption3')
+                input#referoption3.custom-control-input(type='radio' value="yes" checked=chk3 name='referoption3')
                 label.custom-control-label(for='referoption3') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#referoption4.custom-control-input(type='radio' name='referoption4')
+                input#referoption4.custom-control-input(type='radio' value="no" checked=chk4 name='referoption3')
                 label.custom-control-label(for='referoption4') No
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Reason For Leaving
-            textarea#appreasonforleave2.form-control.waves-float(maxlength='225' rows='3' placeholder='Please State Here Why ?' name='appreasonforleave2')
+            textarea#appreasonforleave2.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.appreasonforleave2 : '' placeholder='Please State Here Why ?' name='appreasonforleave2')
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Company
-            input#appcompany3.form-control.waves-float(type='text' required='' placeholder='eg.Actmedicalgroup' name='appcompany3')
+            input#appcompany3.form-control.waves-float(type='text' value= (app)? app.appcompany3 : '' placeholder='eg.Actmedicalgroup' name='appcompany3')
         .form-group.col-md-6
             label.text-dark Jobtitle
-            input#appjobtitle3.form-control.waves-float(type='text' required='' placeholder='eg.Doctorate Degree Holder' name='appjobtitle3')
+            input#appjobtitle3.form-control.waves-float(type='text' value= (app)? app.appjobtitle3 : '' placeholder='eg.Doctorate Degree Holder' name='appjobtitle3')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Address
-            input#appaddress8.form-control.waves-float(type='text' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress8')
+            input#appaddress8.form-control.waves-float(type='text' value= (app)? app.appaddress8 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appaddress8')
         .form-group.col-md-3
             label.text-dark From
-            input#appfrom6.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom6')
+            input#appfrom6.form-control.waves-float(type='date' value= (app)? app.appfrom6 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appfrom6')
         .form-group.col-md-3
             label.text-dark To
-            input#appto6.form-control.waves-float(type='date' required='' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto6')
+            input#appto6.form-control.waves-float(type='date' value= (app)? app.appto6 : '' placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appto6')
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompany4.form-control.waves-float(type='text' required='' name='appcompany4')
+            input#appcompany4.form-control.waves-float(type='text' value= (app)? app.appcompany4 : '' name='appcompany4')
         .form-group.col-sm-4
             label.text-dark Supervisor
-            input#appsupervisor4.form-control.waves-float(type='date' required='' name='appsupervisor4')
+            input#appsupervisor4.form-control.waves-float(type='text' value= (app)? app.appsupervisor4 : '' name='appsupervisor4')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#referoption5.custom-control-input(type='radio' name='referoption5')
+                input#referoption5.custom-control-input(type='radio' value="yes" checked=chk5 name='referoption5')
                 label.custom-control-label(for='referoption5') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#referoption6.custom-control-input(type='radio' name='referoption6')
+                input#referoption6.custom-control-input(type='radio' value="no" checked=chk6 name='referoption5')
                 label.custom-control-label(for='referoption6') No
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Reason For Leaving
-            textarea#appreasonforleave3.form-control.waves-float(maxlength='225' rows='3' placeholder='Please State Here Why ?' name='appreasonforleave3')
+            textarea#appreasonforleave3.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.appreasonforleave3 : '' placeholder='Please State Here Why ?' name='appreasonforleave3')
     hr(style='background-color: #0b0b0b')
     // Referral Section
     .form-row.col-md-12
@@ -121,40 +134,40 @@
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Fullname
-            input#refferfullname.form-control.waves-float(type='text' required='' placeholder='eg.Juan Dela Cruz' name='refferfullname')
+            input#refferfullname.form-control.waves-float(type='text' value= (app)? app.refferfullname : '' placeholder='eg.Juan Dela Cruz' name='refferfullname')
         .form-group.col-md-6
             label.text-dark Relationship
-            input#refferrelationship.form-control.waves-float(type='text' required='' placeholder='eg.Hr Manager' name='refferrelationship')
+            input#refferrelationship.form-control.waves-float(type='text' value= (app)? app.refferrelationship : '' placeholder='eg.Hr Manager' name='refferrelationship')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Company Name
-            input#reffercompanyname.form-control.waves-float(type='text' required='' placeholder='eg.Actmedicalgroup' name='reffercompanyname')
+            input#reffercompanyname.form-control.waves-float(type='text' value= (app)? app.reffercompanyname : '' placeholder='eg.Actmedicalgroup' name='reffercompanyname')
         .form-group.col-md-6
             label.text-dark Company Phone
-            input#reffercompanyphone.form-control.waves-float(type='text' required='' placeholder='eg.818-924-325' name='reffercompanyphone')
+            input#reffercompanyphone.form-control.waves-float(type='text' value= (app)? app.reffercompanyphone : '' placeholder='eg.818-924-325' name='reffercompanyphone')
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Address
-            textarea#refferaddress.form-control.waves-float(maxlength='225' rows='3' placeholder='' name='refferaddress')
+            textarea#refferaddress.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.refferaddress : '' placeholder='' name='refferaddress')
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Fullname
-            input#refferfullname1.form-control.waves-float(type='text' required='' placeholder='eg.Juan Dela Cruz' name='refferfullname1')
+            input#refferfullname1.form-control.waves-float(type='text' value= (app)? app.refferfullname1 : '' placeholder='eg.Juan Dela Cruz' name='refferfullname1')
         .form-group.col-md-6
             label.text-dark Relationship
-            input#refferrelationship1.form-control.waves-float(type='text' required='' placeholder='eg.Hr Manager' name='refferrelationship1')
+            input#refferrelationship1.form-control.waves-float(type='text' value= (app)? app.refferrelationship1 : '' placeholder='eg.Hr Manager' name='refferrelationship1')
     .form-row.col-md-12
         .form-group.col-md-6
             label.text-dark Company Name
-            input#reffercompanyname1.form-control.waves-float(type='text' required='' placeholder='eg.Actmedicalgroup' name='reffercompanyname1')
+            input#reffercompanyname1.form-control.waves-float(type='text' value= (app)? app.reffercompanyname1 : '' placeholder='eg.Actmedicalgroup' name='reffercompanyname1')
         .form-group.col-md-6
             label.text-dark Company Phone
-            input#reffercompanyphone1.form-control.waves-float(type='text' required='' placeholder='eg.818-924-325' name='reffercompanyphone1')
+            input#reffercompanyphone1.form-control.waves-float(type='text' value= (app)? app.reffercompanyphone1 : '' placeholder='eg.818-924-325' name='reffercompanyphone1')
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Address
-            textarea#refferaddress1.form-control.waves-float(maxlength='225' rows='3' placeholder='' name='refferaddress1')
+            textarea#refferaddress1.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.refferaddress1 : '' placeholder='' name='refferaddress1')
     .form-row.col-md-12
         .form-group.col-md-12
         

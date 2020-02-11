@@ -1,67 +1,71 @@
+- var chk1 = (app && app.citizenus === "yes")? true : false
+- var chk2 = (app && app.citizenus === "no")? true : false
+
+
 .text-muted
   hr(style='background-color: #0b0b0b')
   .form-row.col-md-12
     .form-group.col-md-8
       label.text-dark Position Applied For
-      input#position.form-control.waves-float(type='text' required='' placeholder='eg.Doctor' name='position')
+      input#position.form-control.waves-float(type='text' value= chk1 placeholder='eg.Doctor' name='position')
     .form-group.col-md-4
       label.text-dark Date Available
-      input#dateavailable.form-control.waves-float.floating-label(type='date' required='' placeholder='eg.Juan' name='dateavailable')
+      input#dateavailable.form-control.waves-float.floating-label(type='date' value= (app)? app.dateavailable : '' placeholder='eg.Juan' name='dateavailable')
   .form-row.col-md-12
     .form-group.col-md-4
       label.text-dark First Name
-      input#appname.form-control.waves-float(type='text' required='' placeholder='eg.Juan' name='appname')
+      input#appname.form-control.waves-float(type='text' required value= (app)? app.appname : ''  placeholder='eg.Juan' name='appname')
     .form-group.col-md-4
       label.text-dark Middle Name
-      input#appmname.form-control.waves-float(type='text' required='' placeholder='eg.Luna' name='appmname')
+      input#appmname.form-control.waves-float(type='text' required value= (app)? app.appmname : ''  placeholder='eg.Luna' name='appmname')
     .form-group.col-md-4
       label.text-dark Last Name
-      input#applname.form-control.waves-float(type='text' required='' placeholder='eg.Dela Cruz' name='applname')
+      input#applname.form-control.waves-float(type='text' required value= (app)? app.applname : ''  placeholder='eg.Dela Cruz' name='applname')
   .form-row.col-md-12
     .form-group.col-md-12
       label.text-dark Address 1
-      input#appaddress1.form-control.waves-float(type='text' required='' placeholder='Eg.6 Rockland Dr. Norristown, PA 19401' name='appaddress1')
+      input#appaddress1.form-control.waves-float(type='text' required value= (app)? app.applname : '' placeholder='Eg.6 Rockland Dr. Norristown, PA 19401' name='appaddress1')
   .form-row.col-md-12
     .form-group.col-md-12
       label.text-dark Address 2 (Optional)
-      input#appaddress2.form-control.waves-float(type='text' placeholder='eg.7230 York Street Rosedale, NY 11422' name='appaddress2')
+      input#appaddress2.form-control.waves-float(type='text' value= (app)? app.appaddress2 : '' placeholder='eg.7230 York Street Rosedale, NY 11422' name='appaddress2')
   .form-row.col-md-12
     .form-group.col-md-4
       label.text-dark Zip Code
-      input#appzipcode.form-control.waves-float(type='text' required='' placeholder='eg.+123' name='appzipcode')
+      input#appzipcode.form-control.waves-float(type='text' value= (app)? app.appzipcode : '' placeholder='eg.+123' name='appzipcode')
     .form-group.col-md-4
       label.text-dark State
-      input#appstate.form-control.waves-float(type='text' required='' placeholder='eg.California' name='appstate')
+      input#appstate.form-control.waves-float(type='text' value= (app)? app.appstate : '' placeholder='eg.California' name='appstate')
     .form-group.col-md-4
       label.text-dark City
-      input#appcity.form-control.waves-float(type='text' required='' placeholder='eg.San Francisco' name='appcity')
+      input#appcity.form-control.waves-float(type='text' value= (app)? app.appcity : '' placeholder='eg.San Francisco' name='appcity')
   .form-row.col-md-12
     .form-group.col-md-6
       label.text-dark Phone Number
-      input#appphonenumber.form-control.waves-float(type='tel' required='' placeholder='eg.(800)477-1477' name='appphonenumber')
+      input#appphonenumber.form-control.waves-float(type='tel' required value= (app)? app.appphonenumber : '' placeholder='eg.(800)477-1477' name='appphonenumber')
     .form-group.col-md-6
       label.text-dark Telephone Number
-      input#apptell.form-control.waves-float(type='tel' required='' placeholder='eg.213-251-5567' name='apptell')
+      input#apptell.form-control.waves-float(type='tel' required value= (app)? app.apptell : '' placeholder='eg.213-251-5567' name='apptell')
   .form-row.col-md-12
     .form-group.col-md-6
       label.text-dark Email Address 1
-      input#appemail1.form-control.waves-float(type='tel' required='' placeholder='eg.juandelacruz@gmail.com' name='appemail1')
+      input#appemail1.form-control.waves-float(type='Email' required value= (app)? app.appemail1 : '' placeholder='eg.juandelacruz@gmail.com' name='appemail1')
     .form-group.col-md-6
       label.text-dark Email Address 2 (Optional)
-      input#appemail2.form-control.waves-float(type='tel' placeholder='eg.juandelacruz123@gmail.com' name='appemail2')
+      input#appemail2.form-control.waves-float(type='Email' value= (app)? app.appemail2 : '' placeholder='eg.juandelacruz123@gmail.com' name='appemail2')
   .form-row.col-md-12
     .form-group.col-md-6
       label.text-dark Social Security No
-      input#appssn.form-control.waves-float(type='tel' required='' placeholder='eg.545-01-1936' name='appssn')
+      input#appssn.form-control.waves-float(type='tel' value= (app)? app.appssn : '' placeholder='eg.545-01-1936' name='appssn')
     .form-group.col-md-2
       .form-group
         label.text-dark Are you a citizen of United States?
         .custom-control.custom-radio.custom-control-inline
-          input#appchoiceyes.custom-control-input.waves-float(type='radio' name='appchoiceyes')
-          label.custom-control-label(for='citizen1') Yes
+          input#appchoiceyes.custom-control-input.waves-float(type='radio' value="yes" checked=chk1   name='citizenus') 
+          label.custom-control-label(for='appchoiceyes') Yes
         .custom-control.custom-radio.custom-control-inline
-          input#appchoiceno.custom-control-input.waves-float(type='radio' name='appchoiceno')
-          label.custom-control-label(for='citizen2') No
+          input#appchoiceno.custom-control-input.waves-float(type='radio' value="no" checked=chk2 name='citizenus')
+          label.custom-control-label(for='appchoiceno') No  
     .form-group.col-md-4
       label.text-dark If No, are you authorized to work in the U.S.?
-      input#appstatement.form-control.waves-float(type='tel' required='' placeholder='Kindly Indicate the statement' name='appstatement')
+      input#appstatement.form-control.waves-float(type='tel' value= (app)? app.appstatement : ''  placeholder='Kindly Indicate the statement' name='appstatement')

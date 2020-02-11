@@ -11,5 +11,11 @@ $(function ()
         headerTag: "h3",
         bodyTag: "fieldset",
         transitionEffect: "slide",
+        onFinished: function (event, currentIndex)
+    {
+        $("#form-horizontal").submit();
+
+
+    }
     });
 });

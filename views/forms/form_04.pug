@@ -1,3 +1,19 @@
+- var chk7 = (app && app.question1 === "yes")? true : false
+- var chk8 = (app && app.question1 === "no")? true : false
+- var chk9 = (app && app.question2 === "yes")? true : false
+- var chk10 = (app && app.question2 === "no")? true : false
+- var chk11 = (app && app.question3 === "yes")? true : false
+- var chk12 = (app && app.question3 === "no")? true : false
+- var chk13 = (app && app.question4 === "yes")? true : false
+- var chk14 = (app && app.question4 === "no")? true : false
+- var chk15 = (app && app.question5 === "yes")? true : false
+- var chk16 = (app && app.question5 === "no")? true : false
+- var chk17 = (app && app.question6 === "yes")? true : false
+- var chk18 = (app && app.question6 === "no")? true : false
+- var chk19 = (app && app.question7 === "yes")? true : false
+- var chk20 = (app && app.question7 === "no")? true : false
+
+
 hr(style='background-color: #0b0b0b')
 .row
     .form-row.col-md-12
@@ -5,10 +21,10 @@ hr(style='background-color: #0b0b0b')
             h6.text-dark.mb-4
                 | 1. Are you aware of any malpractice  claims which have been made or may be made against you? For the purposes of his question, claims shall include but not be limited to the filing of a Summons and Complaint, demand letters by patients or attorneys, request for mediation or receipt of letters of intent to file suit.
             .custom-control.custom-radio.custom-control-inline
-                input#q3.custom-control-input(type='radio' name='question1')
+                input#q3.custom-control-input(type='radio' value="yes" checked=chk7 name='question1')
                 label.custom-control-label.text-dark(for='q3') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q4.custom-control-input(type='radio' name='question1')
+                input#q4.custom-control-input(type='radio' value="no" checked=chk8 name='question1')
                 label.custom-control-label.text-dark(for='q4') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -16,10 +32,10 @@ hr(style='background-color: #0b0b0b')
                 | 2. Have you ever been denied a license or had your license limited, suspended, denied or revoked in any state?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q5.custom-control-input(type='radio' name='question2')
+                input#q5.custom-control-input(type='radio' value="yes" checked=chk9 name='question2')
                 label.custom-control-label.text-dark(for='q5') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q6.custom-control-input(type='radio' name='question2')
+                input#q6.custom-control-input(type='radio' value="no" checked=chk10 name='question2')
                 label.custom-control-label.text-dark(for='q6') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -27,10 +43,10 @@ hr(style='background-color: #0b0b0b')
                 | 3. Have you ever been involved in any other activity that would create doubt about your ability or right to practice ?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q7.custom-control-input(type='radio' name='question3')
+                input#q7.custom-control-input(type='radio' value="yes" checked=chk11 name='question3')
                 label.custom-control-label.text-dark(for='q7') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q8.custom-control-input(type='radio' name='question3')
+                input#q8.custom-control-input(type='radio' value="no" checked=chk12 name='question3')
                 label.custom-control-label.text-dark(for='q8') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -38,10 +54,10 @@ hr(style='background-color: #0b0b0b')
                 | 4. Have you ever had your Drug Enforcement Administration Certificate or prescribing privileges limited, suspended or revoked by any date or federal agency ?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q9.custom-control-input(type='radio' name='question4')
+                input#q9.custom-control-input(type='radio' value="yes" checked=chk13 name='question4')
                 label.custom-control-label.text-dark(for='q9') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q10.custom-control-input(type='radio' name='question4')
+                input#q10.custom-control-input(type='radio' value="no" checked=chk14 name='question4')
                 label.custom-control-label.text-dark(for='q10') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -49,10 +65,10 @@ hr(style='background-color: #0b0b0b')
                 | 5. DISHONORABLE SEPERATIONS FROM MILITARY SERVICE within the past 5 years, were you seperated from military service under conditions other than honorable ?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q11.custom-control-input(type='radio' name='question5')
+                input#q11.custom-control-input(type='radio' value="yes" checked=chk15 name='question5')
                 label.custom-control-label.text-dark(for='q11') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q12.custom-control-input(type='radio' name='question5')
+                input#q12.custom-control-input(type='radio' value="yes" checked=chk16 name='question5')
                 label.custom-control-label.text-dark(for='q12') No
     .form-row.col-md-12
         .form-group.col-md-12
@@ -60,17 +76,17 @@ hr(style='background-color: #0b0b0b')
                 | 6. HAVE YOU BEEN THE SUBJECT OF ANY ADVERSE ACTION(S) BY ANY PROFESSIONAL OR VOCATIONAL LICENSING ORGANIZATION(S) ?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q13.custom-control-input(type='radio' name='question6')
+                input#q13.custom-control-input(type='radio'  value="yes" checked=chk17 name='question6')
                 label.custom-control-label.text-dark(for='q13') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q14.custom-control-input(type='radio' name='question6')
+                input#q14.custom-control-input(type='radio'  value="yes" checked=chk18 name='question6')
                 label.custom-control-label.text-dark(for='q14') No
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark
                 | IF YOU ANSWERED &quot;YES,&quot; TO ANY OF THE ABOVE, PLEASE PROVIDE EXPLANATION, INCLUDING DATE AND CIRCUMSTANCES SURROUNDING THE INCIDENT UNDERLYING THE ADVERSE ACTION.
             br
-            textarea#qtext1.form-control.waves-float(maxlength='225' rows='3' placeholder='Please State Here Why ?')
+            textarea#qtext1.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.qtext1 : '' placeholder='Please State Here Why ?' name='qtext1')
 hr(style='background-color: #0b0b0b')
 .row
     .form-row.col-md-12
@@ -78,10 +94,10 @@ hr(style='background-color: #0b0b0b')
             label.text-dark VETERAN&apos;S PREFERENCE: Do you claim veteran&apos;s preference ?
             br
             .custom-control.custom-radio.custom-control-inline
-                input#q15.custom-control-input(type='radio' name='question7')
+                input#q15.custom-control-input(type='radio' value="yes" checked=chk19 name='question7')
                 label.custom-control-label.text-dark(for='q15') Yes
             .custom-control.custom-radio.custom-control-inline
-                input#q16.custom-control-input(type='radio' name='question7')
+                input#q16.custom-control-input(type='radio' value="yes" checked=chk20 name='question7')
                 label.custom-control-label.text-dark(for='q16') No
     .form-row.col-md-12
         .form-group.col-md-12
