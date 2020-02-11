@@ -1,0 +1,6 @@
+RewriteEngine On
+DirectoryIndex disabled
+RewriteRule ^$ http://hmanager@0.0.0:3000/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://hmanager@0.0.0:3000/$1 [P,L]
