@@ -7,6 +7,17 @@ html
 
 
         .content 
+            .row
+                .col-md-2
+                .col-md-8
+                    .card 
+                        .card-body 
+                            form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
+                                label(for="resume") Upload Resume/CSV
+                                br
+                                input(type="file" name="resume" id="resume" required)
+                                button(type="submit") Upload
+                .col-md-2
             .row 
                 .col-md-2 
                 .col-md-8 
@@ -50,17 +61,6 @@ html
                 //-     i.fa.fa-sign-in-alt  
                 //-     |   Submit
                 //- .clearfix 
-
-
-                .col-md-2
-                .row 
-                    .col-md-2
-                    .col-md-8
-                        form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
-                            input(type="file" name="resume" id="resume" required)
-                            button(type="submit") Upload
-                    .col-md-2
-
 
         include Partials/footer.ext.pug 
 

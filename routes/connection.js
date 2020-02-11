@@ -5,7 +5,6 @@ var con;
 
 
 function connection(){
-    //Production 107.180.44.127
     con = mysql.createPool({
         host : 'localhost',
         user : 'hrmanagement',
