@@ -22,6 +22,21 @@ router.get('/',(req,res,next)=>{
 });
 
 
+router.get('/delete?',(req,res,next)=>{
+    var id =req.query.id;
+    var z= 'DELETE FROM applicants WHERE app_id = ?';
+    var zval = [id];
+    con.query(z,zval,(err,rs)=>{
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect('/applicants');
+            res.end();
+        }
+    });
+});
+
+
 
 router.get('/thankyou',(req,res,next)=>{
     res.send('sample');

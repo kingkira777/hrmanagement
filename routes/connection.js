@@ -6,7 +6,7 @@ var con;
 
 function connection(){
     con = mysql.createPool({
-        host : 'localhost',
+        host : 'localhost', 
         user : 'hrmanagement',
         password : '*hr818!',
         database : 'hmanager',
@@ -20,6 +20,7 @@ function connection(){
     //     password : '',
     //     database : 'hmanager',
     // });
+    
     return con;
 }
 

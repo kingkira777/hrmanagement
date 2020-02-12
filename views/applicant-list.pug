@@ -22,7 +22,10 @@ block content
                                 td 
                                     a(href="/applicants/viewform?id="+ app.app_id)
                                         i.fa.fa-edit 
-                                        | Open
+                                        | Open 
+                                    a(href="/applicants/delete?id="+ app.app_id)
+                                        i.fa.fa-trash 
+                                        | Delete
                                 td= app.app_name
                                 td= app.app_email
                                 td= app.app_telephone
