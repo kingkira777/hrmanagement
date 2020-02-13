@@ -5,21 +5,21 @@ var con;
 
 
 function connection(){
-    // con = mysql.createPool({
-    //     host : 'localhost',
-    //     user : 'hrmanagement',
-    //     password : '*hr818!',
-    //     database : 'hmanager',
-    // });
+    con = mysql.createPool({
+        host : 'localhost',
+        user : 'hrmanagement',
+        password : '*hr818!',
+        database : 'hmanager',
+    });
 
 
     //Local
-    con = mysql.createPool({
-        host : 'localhost',
-        user : 'root',
-        password : '',
-        database : 'hmanager',
-    });
+    // con = mysql.createPool({
+    //     host : 'localhost',
+    //     user : 'root',
+    //     password : '',
+    //     database : 'hmanager',
+    // });
     
     return con;
 }
