@@ -33,10 +33,12 @@
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompanyphone1.form-control.waves-float(type='text' value= (app)? app.appcompanyphone1 : '' name='appcompanyphone1')
+            input#appcompanyphone1.form-control.waves-float(type='text' value= (app)? app.appcompanyphone1 : ''
+            name='appcompanyphone1' placeholder='Company Phone')
         .form-group.col-sm-4
             label.text-dark Supervisor Name
-            input#appcompanysupervisor1.form-control.waves-float(type='text' value= (app)? app.appcompanysupervisor1 : '' name='appcompanysupervisor1')
+            input#appcompanysupervisor1.form-control.waves-float(type='text' value= (app)? app.appcompanysupervisor1
+                : '' name='appcompanysupervisor1' placeholder='Supervisor Name')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
@@ -49,7 +51,10 @@
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Reason For Leaving
-            textarea#appreasonforleave1.form-control.waves-float(maxlength='225' rows='3' placeholder='Please State Here Why ?' name='appreasonforleave1')
+            input#appreasonforleave1.form-control.waves-float(type='text' value= (app) ? app.appreasonforleave1 : ''
+            placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appreasonforleave1')
+
+
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
@@ -71,10 +76,12 @@
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompanyphone2.form-control.waves-float(type='text' value= (app)? app.appcompanyphone2 : '' name='appcompanyphone2')
+            input#appcompanyphone2.form-control.waves-float(type='text' value= (app)? app.appcompanyphone2 : ''
+            name='appcompanyphone2' placeholder='Company Phone')
         .form-group.col-sm-4
             label.text-dark Supervisor
-            input#appsupervisor2.form-control.waves-float(type='text' value= (app)? app.appsupervisor2 : '' name='appsupervisor2')
+            input#appsupervisor2.form-control.waves-float(type='text' value= (app)? app.appsupervisor2 : ''
+            name='appsupervisor2' placeholder='Supervisor Name')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
@@ -87,7 +94,9 @@
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Reason For Leaving
-            textarea#appreasonforleave2.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.appreasonforleave2 : '' placeholder='Please State Here Why ?' name='appreasonforleave2')
+            input#appreasonforleave2.form-control.waves-float(type='text' value= (app) ? app.appreasonforleave2 : ''
+                placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appreasonforleave2')
+
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
@@ -109,10 +118,12 @@
     .form-row.col-md-12
         .form-group.col-md-5
             label.text-dark Company Phone
-            input#appcompany4.form-control.waves-float(type='text' value= (app)? app.appcompany4 : '' name='appcompany4')
+            input#appcompany4.form-control.waves-float(type='text' value= (app)? app.appcompany4 : ''
+            name='appcompany4' placeholder='Company Phone')
         .form-group.col-sm-4
             label.text-dark Supervisor
-            input#appsupervisor4.form-control.waves-float(type='text' value= (app)? app.appsupervisor4 : '' name='appsupervisor4')
+            input#appsupervisor4.form-control.waves-float(type='text' value= (app)? app.appsupervisor4 : ''
+            name='appsupervisor4' placeholder='Supervisor Name')
         .form-group.col-sm-3
             label.text-dark May we contact your previous supervisor for a reference?
             br
@@ -125,7 +136,10 @@
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Reason For Leaving
-            textarea#appreasonforleave3.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.appreasonforleave3 : '' placeholder='Please State Here Why ?' name='appreasonforleave3')
+            input#appreasonforleave3.form-control.waves-float(type='text' value= (app) ? app.appreasonforleave3 : ''
+            placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='appreasonforleave3')
+
+
     hr(style='background-color: #0b0b0b')
     // Referral Section
     .form-row.col-md-12
@@ -148,7 +162,8 @@
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Address
-            textarea#refferaddress.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.refferaddress : '' placeholder='' name='refferaddress')
+            input#refferaddress.form-control.waves-float(type='text' value= (app) ? app.refferaddress : ''
+            placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='refferaddress')
     hr(style='background-color: #0b0b0b')
     .form-row.col-md-12
         .form-group.col-md-6
@@ -167,7 +182,8 @@
     .form-row.col-md-12
         .form-group.col-md-12
             label.text-dark Address
-            textarea#refferaddress1.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.refferaddress1 : '' placeholder='' name='refferaddress1')
+            input#refferaddress1.form-control.waves-float(type='text' value= (app) ? app.refferaddress1 : ''
+            placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, Califo rnia 90703.' name='refferaddress1')
     .form-row.col-md-12
         .form-group.col-md-12
         

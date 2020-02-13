@@ -1,6 +1,21 @@
 extends layout 
 
-block content 
+block content
+
+    .card
+        .card-header
+            h4 Applicant Files
+        .card-body
+            .col-md-6.col-lg-6.col-xl-3
+                .card
+                    img.card-img-top.img-fluid(src='/assets/images/small/img-3.jpg' alt='Card image cap')
+                    .card-body
+                        p.card-text
+                            | Some quick example text to build on the card title and make
+                            | up the bulk of the card&apos;s content.
+                            a(href="/files/" + filez[0].file_name)
+                                =filez[0].file_name
+
 
     .card
         .card-header
@@ -8,18 +23,18 @@ block content
         .card-body 
             form#fillupform(action="/applicants/save-fillupform", method="post")
                 h3
-                    |Seller Details
+                    |Personal Details
                 fieldset
                     include forms/form_01.pug
                 h3
-                    |Seller Details
+                    |Education Attainment
                 fieldset
                     include forms/form_02.pug
                 h3
-                    |Seller Details
+                    |Employment Details
                 fieldset
                     include forms/form_03.pug
                 h3 
-                    |Details
+                    |Other Information
                 fieldset
                     include forms/form_04.pug

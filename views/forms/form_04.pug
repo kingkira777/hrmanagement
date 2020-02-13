@@ -86,7 +86,8 @@ hr(style='background-color: #0b0b0b')
             label.text-dark
                 | IF YOU ANSWERED &quot;YES,&quot; TO ANY OF THE ABOVE, PLEASE PROVIDE EXPLANATION, INCLUDING DATE AND CIRCUMSTANCES SURROUNDING THE INCIDENT UNDERLYING THE ADVERSE ACTION.
             br
-            textarea#qtext1.form-control.waves-float(maxlength='225' rows='3' value= (app)? app.qtext1 : '' placeholder='Please State Here Why ?' name='qtext1')
+            input#qtext1.form-control.waves-float(type='text' value= (app) ? app.qtext1: ''
+            placeholder='eg.Whitney High School. 16800 Shoemaker Ave., Cerritos, California 90703.' name='qtext1')
 hr(style='background-color: #0b0b0b')
 .row
     .form-row.col-md-12

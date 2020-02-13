@@ -7,7 +7,7 @@
   .form-row.col-md-12
     .form-group.col-md-8
       label.text-dark Position Applied For
-      input#position.form-control.waves-float(type='text' value= chk1 placeholder='eg.Doctor' name='position')
+      input#position.form-control.waves-float(type='text' value= (app)? app.position : '' placeholder='eg.Doctor' name='position')
     .form-group.col-md-4
       label.text-dark Date Available
       input#dateavailable.form-control.waves-float.floating-label(type='date' value= (app)? app.dateavailable : '' placeholder='eg.Juan' name='dateavailable')

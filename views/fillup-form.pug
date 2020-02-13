@@ -11,7 +11,7 @@ html
                 .col-md-2
                 .col-md-8
                     .card 
-                        .card-body 
+                        .card-body
                             form(action="/applicants/upload-file?formid="+formid method="post" encType="multipart/form-data")
                                 label(for="resume") Upload Resume/CSV
                                 br
@@ -31,15 +31,15 @@ html
                                 fieldset
                                     include forms/form_01.pug
                                 h3
-                                    |Seller Details
+                                    |Education Attainment
                                 fieldset
                                     include forms/form_02.pug
                                 h3
-                                    |Seller Details
+                                    |Employment Details
                                 fieldset
                                     include forms/form_03.pug
                                 h3 
-                                    |Details
+                                    |Other Information
                                 fieldset
                                     include forms/form_04.pug
 

@@ -39,7 +39,7 @@ router.get('/delete?',(req,res,next)=>{
 
 
 router.get('/thankyou',(req,res,next)=>{
-    res.send('sample');
+    res.render('thankyou');
 });
 
 
@@ -61,8 +61,16 @@ router.get('/viewform?',(req,res,next)=>{
                     console.log("Err: "+ err1);
                 }
                 var form_data=JSON.parse(rs[0].app_form);
-                res.render('view-form',{ title : 'View Applicant Form', app : form_data});
-                res.end();
+                var gf = `SELECT * FROM files WHERE file_no = ?`;
+                var gfval = [rs[0].app_no];
+                con.query(gf,gfval,(err2, rs2)=>{
+                    if (err){
+                        throw err;
+                    }
+                    res.render('view-form',{ title : 'View Applicant Form', app : form_data , filez : rs2});
+                    res.end();
+                });
+
             });
         });
     }else{    
@@ -97,10 +105,6 @@ router.post('/upload-file?',(req,res,next)=>{
 
     let file = req.files.resume;
     var path = 'public/files/' + file.name;
-
-    
-
-
     file.mv(path, (err)=>{
         if(err){
             console.log("error: "+ err);
@@ -115,7 +119,7 @@ router.post('/upload-file?',(req,res,next)=>{
             if(err){
                 console.log("error: "+ err);
             }
-            res.send("File Uploaded");
+            res.redirect("/applicants/fillup-form?formid="+ no);
             res.end();
         });
     });
@@ -161,7 +165,7 @@ router.post('/save-fillupform?',(req,res,next)=>{
                 if(err){
                     console.log("err: "+ err)
                 }
-                res.send('Saved');
+                res.redirect('/applicants/thankyou');
                 res.end();
             });
         }
